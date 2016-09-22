@@ -1,0 +1,70 @@
+
+doctype html
+html(lang='en')
+  head
+    title= test
+    link(href='css/normalize.css')
+    link(href='css/style.css' rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet")
+    script
+      - var titulo = "Jade Rocks!"
+      - var link1 = "Algo"
+      - var link2 = "Lorem"
+      - var link3 = "Ipsum"
+      - var link4 = "Txt"
+      - var link5 = "Texto"
+      - var link6 = "B"
+    
+  body
+    // start
+    
+    //- HEADER
+    header
+      div.wrap
+        h1= titulo
+    //- CONTAINER
+    main
+      div.wrap.box.columns
+        nav.col
+          ul
+            li
+              a.selected(href="#")
+                img(src="img/ico-1.png")
+                span= link1
+            li
+              a(href="#")
+                img(src="img/ico-2.png")
+                span= link2
+            li
+              a(href="#")
+                img(src="img/ico-3.png")
+                span= link3
+            li
+              a(href="#")
+                img(src="img/ico-4.png")
+                span= link4
+            li
+              a(href="#")
+                img(src="img/ico-5.png")
+                span= link5
+            li
+              a(href="#")
+                img(src="img/ico-6.png")
+                span= link6
+        div.col.content
+          article
+            p
+              | Jade is a terse and simple
+              | templating language with a
+              | strong focus on performance
+              | and
+          article
+            span Titulo
+          article
+            span Titulo
+          article 
+            span Titulo
+
+    footer
+      div
+    // end

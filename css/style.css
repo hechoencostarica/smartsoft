@@ -1,0 +1,121 @@
+* {
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+a, a:hover {
+  text-decoration: none; }
+
+img {
+  border: none; }
+
+ul, li {
+  list-style-type: none; }
+
+/* GENERAL */
+html, body {
+  background-color: #f4f4f4;
+  color: #ffffff; }
+
+div.wrap {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 15px; }
+
+/* COLUMNS */
+.columns {
+  clear: both;
+  width: 100%;
+  margin: 0 auto; }
+
+.col {
+  display: block;
+  float: left;
+  margin: 0; }
+
+.group:before, .group:after {
+  content: "";
+  display: table; }
+
+.group:after {
+  clear: both; }
+
+.group {
+  zoom: 1; }
+
+/* HEADER */
+header {
+  background-color: #137397;
+  height: 38px;
+  display: block;
+  border-bottom: 1px solid #dbdadb;
+  padding-top: 6px;
+  margin-bottom: 28px; }
+  header h1 {
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase; }
+
+/* MAIN */
+main .box {
+  border: 1px solid #dbdadb;
+  overflow: hidden; }
+  main .box nav {
+    max-width: 198px;
+    width: 30%;
+    background: url("../img/false-column.png") repeat-y left top;
+    padding-top: 11px; }
+    main .box nav ul {
+      display: block; }
+      main .box nav ul li {
+        display: block;
+        padding: 0 0 9px 0; }
+        main .box nav ul li a {
+          display: block;
+          height: 38px;
+          width: 100%;
+          color: #1d1c1c;
+          font-family: "Fjalla One", sans-serif;
+          font-size: 13px;
+          font-weight: 400;
+          vertical-align: center;
+          text-transform: uppercase; }
+          main .box nav ul li a img {
+            display: inline-block;
+            float: left;
+            margin: 0 17px;
+            border: 1px solid #137397;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -ms-border-radius: 20px;
+            border-radius: 20px; }
+          main .box nav ul li a span {
+            display: inline-block;
+            padding: 9px 0 0 20px; }
+        main .box nav ul li a.selected {
+          background: url("../img/false-column-btn.png") repeat-y left top #fff; }
+        main .box nav ul li a:hover {
+          color: #137397; }
+          main .box nav ul li a:hover img {
+            border: 1px solid #fff; }
+  main .box .content {
+    width: 70%;
+    background-color: #fff;
+    color: #1d1c1c;
+    padding: 0 15px 15px 15px;
+    font-size: 12px;
+    font-family: "Helvetica", arial, sans-serif; }
+    main .box .content article {
+      border-bottom: 1px solid #dbdadb;
+      padding: 10px 0; }
+
+/* COLUMNS */
+/* MENU */
+/* CTA */
+/* CTA */
+/* RESPONSIVE */
