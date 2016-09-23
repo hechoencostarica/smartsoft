@@ -113,6 +113,20 @@ main .box {
     main .box .content article {
       border-bottom: 1px solid #dbdadb;
       padding: 10px 0; }
+      main .box .content article input[type=checkbox] + label {
+        color: #ccc;
+        font-style: italic;
+        content: "mostrar"; }
+      main .box .content article input[type=checkbox]:checked + label {
+        color: #137397;
+        font-style: normal;
+        content: "ocultar"; }
+      main .box .content article input[type=checkbox] + label:before {
+        content: "Mostrar"; }
+      main .box .content article input[type=checkbox]:checked + label:before {
+        content: "Ocultar"; }
+      main .box .content article #card {
+        display: none; }
 
 /* COLUMNS */
 /* MENU */

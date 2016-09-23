@@ -7,14 +7,16 @@ html(lang='en')
     link(href='css/style.css' rel="stylesheet")
     link(href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet")
     script
-      - var titulo = "Jade Rocks!"
+      - var titulo = "Titulo Principal"
       - var link1 = "Algo"
       - var link2 = "Lorem"
       - var link3 = "Ipsum"
       - var link4 = "Txt"
       - var link5 = "Texto"
       - var link6 = "B"
-    
+      - var clic = "Tarjeta"
+    script(type="text/javascript", src="js/progras.js")
+
   body
     // start
     
@@ -51,19 +53,24 @@ html(lang='en')
               a(href="#")
                 img(src="img/ico-6.png")
                 span= link6
+        //- div.col.content
+        //-   article
+        //-     p
+        //-       | Jade is a terse and simple
+        //-       | templating language with a
+        //-       | strong focus on performance
+        //-       | and
+        //-   article
+        //-     span Titulo
+        //-   article
+        //-     span Titulo
+        //-   article 
+        //-     span Titulo
         div.col.content
           article
-            p
-              | Jade is a terse and simple
-              | templating language with a
-              | strong focus on performance
-              | and
-          article
-            span Titulo
-          article
-            span Titulo
-          article 
-            span Titulo
+            input(type="checkbox", value="Mostrar", name="ossm", onclick="toggle_visibility('card');")= clic
+            label Tarjeta
+            div#card This is foo
 
     footer
       div
