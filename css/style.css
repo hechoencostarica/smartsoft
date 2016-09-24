@@ -113,20 +113,56 @@ main .box {
     main .box .content article {
       border-bottom: 1px solid #dbdadb;
       padding: 10px 0; }
-      main .box .content article input[type=checkbox] + label {
-        color: #ccc;
-        font-style: italic;
-        content: "mostrar"; }
-      main .box .content article input[type=checkbox]:checked + label {
-        color: #137397;
-        font-style: normal;
-        content: "ocultar"; }
-      main .box .content article input[type=checkbox] + label:before {
-        content: "Mostrar"; }
-      main .box .content article input[type=checkbox]:checked + label:before {
-        content: "Ocultar"; }
+      main .box .content article img.card {
+        display: block;
+        width: 1005;
+        max-width: 273px;
+        height: auto; }
+      main .box .content article form {
+        display: block;
+        padding: 15px 0; }
+        main .box .content article form .checkit[type=checkbox]:before {
+          position: relative;
+          display: block;
+          width: 21px;
+          height: 21px;
+          border: 1px solid #137397;
+          content: " ";
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          -ms-border-radius: 3px;
+          border-radius: 3px;
+          margin: 0 2px 0 0; }
+        main .box .content article form .checkit[type=checkbox]:after {
+          position: relative;
+          display: block;
+          width: 21px;
+          height: 21px;
+          border: 1px solid #137397;
+          content: " ";
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          -ms-border-radius: 3px;
+          border-radius: 3px;
+          margin: 0 2px 0 0;
+          background-image: url("../img/muck-up.png") n o-repeat center center;
+          top: -21px;
+          left: -21px; }
+        main .box .content article form input[type=checkbox] + label {
+          color: #ccc;
+          font-style: italic;
+          content: "mostrar"; }
+        main .box .content article form input[type=checkbox]:checked + label {
+          color: #137397;
+          font-style: normal;
+          content: "Deshabilitar "; }
+        main .box .content article form input[type=checkbox] + label:before {
+          content: "Utilizar "; }
+        main .box .content article form input[type=checkbox]:checked + label:before {
+          content: "Deshabilitar "; }
       main .box .content article #card {
-        display: none; }
+        display: none;
+        padding: 15px 0; }
 
 /* COLUMNS */
 /* MENU */

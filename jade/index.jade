@@ -68,9 +68,11 @@ html(lang='en')
         //-     span Titulo
         div.col.content
           article
-            input(type="checkbox", value="Mostrar", name="ossm", onclick="toggle_visibility('card');")= clic
-            label Tarjeta
-            div#card This is foo
+            img.card(src="img/card-muckup.jpg")
+            form.showhide
+              input.checkit(type="checkbox", value="Mostrar", name="ossm", onclick="toggle_visibility('card');")= clic
+              label enmascaramientos sobre números de tarjetas
+              div#card This is foo
 
     footer
       div

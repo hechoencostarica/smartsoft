@@ -43,7 +43,8 @@ main {
     nav { max-width:198px; width:30%; background: url('../img/false-column.png') repeat-y left top ; padding-top:11px;
       ul { display:block;
         li { display: block; padding:0 0 9px 0;
-          a { display:block; height:38px; width:100%; color:$negro; font-family: $font1; font-size:13px; font-weight:400; vertical-align:center; text-transform: uppercase;
+          a { display:block; height:38px; width:100%; color:$negro; font-family: $font1; font-size:13px; font-weight:400;
+            vertical-align:center; text-transform: uppercase;
             img { display:inline-block; float:left; margin:0 17px; border:1px solid $azul; @include border-radius(20px); }
             span { display:inline-block; padding:9px 0 0 20px; }
 
@@ -57,22 +58,21 @@ main {
     }
     .content { width:70%; background-color:#fff; color:$negro; padding:0 15px 15px 15px; font-size:12px; font-family:$font2;
       article { border-bottom:1px solid $gris; padding:10px 0;
-          input[type=checkbox] + label {
-            color: #ccc; font-style: italic;
-            content:('mostrar')
+        img.card {display:block; width:1005; max-width:273px; height:auto; }
+        form {
+            display: block; padding:15px 0;
+            // .checkit[type=checkbox] { display:none; position:absolute; }
+
+            .checkit[type=checkbox]:before { position:relative; display:block; width:21px; height:21px; border:1px solid $azul;
+              content:" ";  @include border-radius(3px); margin:0 2px 0 0; }
+            .checkit[type=checkbox]:after { position:relative; display:block; width:21px; height:21px; border:1px solid $azul;
+              content:" "; @include border-radius(3px); margin:0 2px 0 0; background-image:url("../img/muck-up.png")n o-repeat center center; top:-21px; left:-21px }
+            input[type=checkbox] + label { color: #ccc; font-style:italic; content:('mostrar') }
+            input[type=checkbox]:checked + label { color:$azul; font-style: normal; content:('Deshabilitar ') }
+            input[type=checkbox] + label:before { content:('Utilizar ') }
+            input[type=checkbox]:checked + label:before { content:('Deshabilitar ') }
           }
-          input[type=checkbox]:checked + label {
-            color:$azul;
-            font-style: normal;
-            content:('ocultar')
-          }
-          input[type=checkbox] + label:before {
-            content:('Mostrar')
-          }
-          input[type=checkbox]:checked + label:before {
-            content:('Ocultar')
-          }
-          #card { display:none; }
+          #card { display:none; padding:15px 0; }
        }
      }
   }
