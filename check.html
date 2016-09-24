@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        .checkit {
+          position: relative;
+         width: 25px;
+         height: 25px;
+         -webkit-appearance: initial;
+         border-radius: 3px;
+         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+         outline:none;
+         cursor:pointer;
+         border:1px solid #ddd;
+        }
+
+        .checkit:after {
+          position:absolute;
+          top:5%;
+          display:block;
+          line-height:32px;
+          width:100%;
+          height:90%;
+          box-sizing:border-box;
+          text-align:center;
+          transition: all 0.3s ease-in 0s;
+          color:black;
+          border:#888 1px solid;
+          border-radius:3px;
+
+        }
+
+        .checkit:after
+        {
+            left:0;
+            content: "";
+
+        }
+        .checkit:checked:after
+        {
+            left:0;
+            content: "";
+              background: url("img/ico-check.png") no-repeat center center;
+
+        }
+
+        form input[type=checkbox]+label {
+            color: #ccc;
+            font-style: italic;
+            content: "mostrar";
+        }
+
+        form input[type=checkbox]:checked+label {
+            color: #137397;
+            font-style: normal;
+            content: "Deshabilitar ";
+        }
+
+        form input[type=checkbox]+label:before {
+            content: "Utilizar ";
+        }
+
+        form input[type=checkbox]:checked+label:before {
+            content: "Deshabilitar ";
+        }
+
+        #card {
+            display: none;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="showhide">
+        <input type="checkbox" value="Mostrar" name="ossm" onclick="toggle_visibility('card');" class="checkit">
+        <label>enmascaramientos sobre números de tarjetas</label>
+        <div id="card">This is foo</div>
+    </form>
+</body>
+
+</html>
+http://stackoverflow.com/questions/4148499/how-to-style-checkbox-using-css

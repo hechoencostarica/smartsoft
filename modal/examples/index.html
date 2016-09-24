@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <script src="jquery.modal.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="jquery.modal.css" type="text/css" media="screen" />
+
+  <style type="text/css" media="screen">
+
+    body > .modal { display:none; }
+
+  </style>
+  <title>jQuery Modal</title>
+</head>
+<body>
+
+  <p>
+    This <a href="#ex5">example</a> demonstrates how to disable the default methods of closing the modal:
+  </p>
+  <div id="ex5" class="modal">
+    <p>If you do this, be sure to provide the user with an alternate method of
+
+      <a href="#" rel="modal:close" class="main-btn">closing the window.</a>
+
+    </p>
+  </div>
+
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+
+    function log_modal_event(event, modal) {
+      if(typeof console != 'undefined' && console.log) console.log("[event] " + event.type);
+    };
+
+    $(document).on($.modal.BEFORE_BLOCK, log_modal_event);
+    $(document).on($.modal.BLOCK, log_modal_event);
+    $(document).on($.modal.BEFORE_OPEN, log_modal_event);
+    $(document).on($.modal.OPEN, log_modal_event);
+    $(document).on($.modal.BEFORE_CLOSE, log_modal_event);
+    $(document).on($.modal.CLOSE, log_modal_event);
+    $(document).on($.modal.AFTER_CLOSE, log_modal_event);
+    $(document).on($.modal.AJAX_SEND, log_modal_event);
+    $(document).on($.modal.AJAX_SUCCESS, log_modal_event);
+    $(document).on($.modal.AJAX_COMPLETE, log_modal_event);
+
+    $('#more').click(function() {
+      $(this).parent().after($(this).parent().next().clone());
+      return false;
+    });
+
+    $('a[href="#ex5"]').click(function(event) {
+      event.preventDefault();
+      $(this).modal({
+        escapeClose: false,
+        clickClose: false,
+        showClose: false
+      });
+    });
+
+  });
+</script>
+
+
+</body>
+</html>
