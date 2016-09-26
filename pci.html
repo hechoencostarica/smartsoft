@@ -33,7 +33,7 @@
         <nav class="col">
           <div class="false-col"></div>
           <ul>
-            <li><a href="index.html" class="selected"><img src="img/ico-1.png"><span>GENERAL</span></a></li>
+            <li><a href="index.html"><img src="img/ico-1.png"><span>GENERAL</span></a></li>
             <li><a href="#"><img src="img/ico-2.png"><span>ESTADOS INICIALES</span></a></li>
             <li><a href="#"><img src="img/ico-3.png"><span>ALERTAS</span></a></li>
             <li><a href="#"><img src="img/ico-4.png"><span>ENVIO DE ALERTAS</span></a></li>
@@ -45,57 +45,54 @@
             <li><a href="#"><img src="img/ico-10.png"><span>SEGURIDAD</span></a></li>
             <li><a href="#"><img src="img/ico-11.png"><span>EFECTIVIDAD REGLAS</span></a></li>
             <li><a href="#"><img src="img/ico-12.png"><span>CAMPOS AUXILIARES</span></a></li>
-            <li><a href="pci.html"><img src="img/ico-13.png"><span>NORMATIVA PCI</span></a></li>
+            <li><a href="pci.html" class="selected"><img src="img/ico-13.png"><span>NORMATIVA PCI</span></a></li>
             <li><a href="#"><img src="img/ico-14.png"><span>HISTORICOS</span></a></li>
           </ul>
         </nav>
-        <!-- general.jade-->
         <div class="col content">
-          <article><span>EXTENCIONES RESTRINGIDAS</span>
-            <div class="contador">
-              <ul class="extenciones otro">
-                <p>Tama&ntilde;o m&aacute;ximo permitido</p>
-                <li> <a href="#" class="btn-ready noslec">7Z</a><img src="img/medidor.jpg" class="card"></li>
-              </ul>
-            </div><span>ARCHIVOS ADJUNTOS</span>
-            <div class="contador"></div>
-            <ul class="extenciones">
-              <li> <a href="#" class="btn-ready">PNG</a></li>
-              <li> <a href="#" class="btn-ready">JPG</a></li>
-              <li> <a href="#" class="btn-ready">BMP</a></li>
-              <li> <a href="#" class="btn-ready">PSD</a></li>
-              <li> <a href="#" class="btn-ready">RAR</a></li>
-              <li> <a href="#" class="btn-ready noslec">ZIP</a></li>
-              <li> <a href="#" class="btn-ready noslec">MOV</a></li>
-              <li> <a href="#" class="btn-ready noslec">DOC</a></li>
-              <li> <a href="#" class="btn-ready noslec">EXL</a></li>
-              <li> <a href="#" class="btn-ready noslec">7Z</a></li>
-            </ul>
-          </article>
-          <article><span>PERFIL</span>
-            <div class="contador"> 
-              <form>Seleccione el tipo de c&aacute;lculo de perfil<br>
-                <select name="perfil" class="checkit">
-                  <option value="Tarjeta Actual" selected>Tarjeta Actual</option>
-                  <option value="Tarjeta 2">Tarjeta 2</option>
-                  <option value="Tarjeta 3">Tarjeta 3</option>
-                  <option value="Tarjeta 4">Tarjeta 4</option>
-                </select>
+          <article><img src="img/card-muckup.jpg" class="card">
+            <form class="showhide">
+              <input type="checkbox" value="Mostrar" name="ossm" onclick="toggle_visibility('card');" class="checkit">
+              <label>enmascaramientos sobre n&uacute;meros de tarjetas</label>
+            </form>
+            <div id="card">
+              <form>
+                <div class="centinel">
+                  <input type="radio" name="gender" value="male" class="checkit">
+                  <label>Utilizar m&eacute;todos de Centinel</label>
+                  <input type="radio" name="gender" value="male" class="checkit">
+                  <label>Utilizar m&eacute;todos cliente</label>
+                </div>
               </form>
-            </div>
-          </article>
-          <article><span>BLOQUEOS EMISOR</span>
-            <div class="contador"> 
-              <form>Intervalo de tiempo entre solicitudes a un mismo afectado
-                <input id="user_lic" type="number" min="1" max="24" step="1" value="1" class="checkit">horas
-              </form>
-            </div>
-          </article>
-          <article><span>BLOQUEOS ADQUIRIENTE</span>
-            <div class="contador"> 
-              <form>Intervalo de tiempo entre solicitudes a un mismo afectado
-                <input id="user_lic" type="number" min="1" max="24" step="1" value="1" class="checkit">horas
-              </form>
+              <h3>Defina la m&aacute;scara a ser aplicada de acuerdo a su longitud</h3>
+              <div></div>
+              <!-- TABLE-->
+              <table width="80%" border="0" cellspacing="3" cellpadding="6" class="longitudes">
+                <thead>
+                  <tr>
+                    <th valign="middle" scope="col">Longitud</th>
+                    <th scope="col" valign="middle"> Muestra de M&aacute;scara</th>
+                    <th scope="col" valign="middle" width="30">&nbsp;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>15</td>
+                    <td>0000 0000 0000 ***</td>
+                    <td><a href="#"><img src="img/ico-edit.png"></a></td>
+                  </tr>
+                  <tr>
+                    <td>16</td>
+                    <td>0000 **** **** 0000</td>
+                    <td><a href="#"><img src="img/ico-edit.png"></a></td>
+                  </tr>
+                  <tr>
+                    <td>19</td>
+                    <td>0000 0000 0000 **** ***</td>
+                    <td><a href="#"><img src="img/ico-edit.png"></a></td>
+                  </tr>
+                </tbody>
+              </table><a href="#ex5" title="Nuevo" class="btn-ready">Nuevo</a>
             </div>
           </article>
         </div>

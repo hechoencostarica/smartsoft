@@ -21,10 +21,12 @@ html, body {
   background-color: #f4f4f4;
   color: #ffffff; }
 
+body > .modal {
+  display: none; }
+
 div.wrap {
   max-width: 768px;
-  margin: 0 auto;
-  padding: 0 15px; }
+  margin: 0 auto; }
 
 /* COLUMNS */
 .columns {
@@ -49,123 +51,349 @@ div.wrap {
 
 /* HEADER */
 header {
+  font-family: "Fjalla One", sans-serif;
   background-color: #137397;
-  height: 38px;
   display: block;
   border-bottom: 1px solid #dbdadb;
-  padding-top: 6px;
-  margin-bottom: 28px; }
+  padding: 8px;
+  margin-bottom: 28px;
+  position: relative; }
   header h1 {
-    font-family: "Fjalla One", sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 14px;
     text-transform: uppercase; }
+    header h1 img {
+      display: inline-block;
+      margin-right: 7px;
+      vertical-align: middle; }
+  header .mini-menu {
+    height: 22px;
+    padding: 0 10px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 75px; }
+    header .mini-menu a {
+      width: 22px;
+      height: 22px;
+      display: block;
+      margin: 5px 0 0 0;
+      float: left; }
+      header .mini-menu a img {
+        display: block;
+        border: 0; }
 
 /* MAIN */
-main .box {
-  border: 1px solid #dbdadb;
-  overflow: hidden; }
-  main .box nav {
-    max-width: 198px;
-    width: 30%;
-    background: url("../img/false-column.png") repeat-y left top;
-    padding-top: 11px; }
-    main .box nav ul {
-      display: block; }
-      main .box nav ul li {
+main {
+  font-family: "Fjalla One", sans-serif; }
+  main .box {
+    overflow: hidden; }
+    main .box nav {
+      max-width: 198px;
+      width: 30%;
+      padding-top: 11px;
+      position: relative; }
+      main .box nav div.false-col {
+        position: absolute;
+        width: 69px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #137397;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #137397 1%, #139773 100%, #139773 100%);
+        background: -webkit-linear-gradient(top, #137397 1%, #139773 100%, #139773 100%);
+        background: linear-gradient(to bottom, #137397 1%, #139773 100%, #139773 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#137397', endColorstr='#139773',GradientType=0 ); }
+      main .box nav ul {
         display: block;
-        padding: 0 0 9px 0; }
-        main .box nav ul li a {
+        position: relative; }
+        main .box nav ul li {
           display: block;
-          height: 38px;
-          width: 100%;
-          color: #1d1c1c;
-          font-family: "Fjalla One", sans-serif;
-          font-size: 13px;
-          font-weight: 400;
-          vertical-align: center;
-          text-transform: uppercase; }
-          main .box nav ul li a img {
-            display: inline-block;
-            float: left;
-            margin: 0 17px;
-            border: 1px solid #137397;
-            -webkit-border-radius: 20px;
-            -moz-border-radius: 20px;
-            -ms-border-radius: 20px;
-            border-radius: 20px; }
-          main .box nav ul li a span {
-            display: inline-block;
-            padding: 9px 0 0 20px; }
-        main .box nav ul li a.selected {
-          background: url("../img/false-column-btn.png") repeat-y left top #fff; }
-        main .box nav ul li a:hover {
-          color: #137397; }
-          main .box nav ul li a:hover img {
-            border: 1px solid #fff; }
-  main .box .content {
-    width: 70%;
-    background-color: #fff;
-    color: #1d1c1c;
-    padding: 0 15px 15px 15px;
-    font-size: 12px;
-    font-family: "Helvetica", arial, sans-serif; }
-    main .box .content article {
-      border-bottom: 1px solid #dbdadb;
-      padding: 10px 0; }
-      main .box .content article img.card {
-        display: block;
-        width: 1005;
-        max-width: 273px;
-        height: auto; }
-      main .box .content article form {
-        display: block;
-        padding: 15px 0; }
-        main .box .content article form .checkit[type=checkbox]:before {
-          position: relative;
-          display: block;
-          width: 21px;
-          height: 21px;
-          border: 1px solid #137397;
-          content: " ";
-          -webkit-border-radius: 3px;
-          -moz-border-radius: 3px;
-          -ms-border-radius: 3px;
-          border-radius: 3px;
-          margin: 0 2px 0 0; }
-        main .box .content article form .checkit[type=checkbox]:after {
-          position: relative;
-          display: block;
-          width: 21px;
-          height: 21px;
-          border: 1px solid #137397;
-          content: " ";
-          -webkit-border-radius: 3px;
-          -moz-border-radius: 3px;
-          -ms-border-radius: 3px;
-          border-radius: 3px;
-          margin: 0 2px 0 0;
-          background-image: url("../img/muck-up.png") n o-repeat center center;
-          top: -21px;
-          left: -21px; }
-        main .box .content article form input[type=checkbox] + label {
-          color: #ccc;
-          font-style: italic;
-          content: "mostrar"; }
-        main .box .content article form input[type=checkbox]:checked + label {
+          padding: 0 0 9px 0; }
+          main .box nav ul li a {
+            display: block;
+            height: 38px;
+            width: 100%;
+            color: #1d1c1c;
+            font-size: 14px;
+            font-weight: 400;
+            vertical-align: center;
+            text-transform: uppercase; }
+            main .box nav ul li a img {
+              display: inline-block;
+              float: left;
+              margin: 0 17px;
+              border: 1px solid #137397;
+              -webkit-border-radius: 20px;
+              -moz-border-radius: 20px;
+              -ms-border-radius: 20px;
+              border-radius: 20px; }
+            main .box nav ul li a span {
+              display: inline-block;
+              padding: 9px 0 0 10px; }
+          main .box nav ul li a.selected {
+            background: url("../img/false-column-btn.png") repeat-y left top #ffffff; }
+            main .box nav ul li a.selected img {
+              border: none; }
+          main .box nav ul li a:hover {
+            color: #137397; }
+            main .box nav ul li a:hover img {
+              border: 1px solid #ffffff; }
+    main .box .content {
+      width: 70%;
+      background-color: #ffffff;
+      color: #1d1c1c;
+      padding: 0 15px 15px 15px;
+      font-size: 12px;
+      font-family: "Helvetica", arial, sans-serif;
+      text-align: center;
+      height: 670px; }
+      main .box .content article {
+        font-family: "Fjalla One", sans-serif;
+        border-bottom: 1px solid #dbdadb;
+        padding: 10px 0 0 0; }
+        main .box .content article span {
+          float: left;
           color: #137397;
-          font-style: normal;
-          content: "Deshabilitar "; }
-        main .box .content article form input[type=checkbox] + label:before {
-          content: "Utilizar "; }
-        main .box .content article form input[type=checkbox]:checked + label:before {
-          content: "Deshabilitar "; }
-      main .box .content article #card {
-        display: none;
-        padding: 15px 0; }
+          margin-bottom: 15px; }
+        main .box .content article ul.extenciones {
+          clear: both;
+          display: block;
+          overflow: hidden;
+          margin: 15px auto; }
+          main .box .content article ul.extenciones li a.btn-ready {
+            padding: 2px 10px;
+            float: left; }
+          main .box .content article ul.extenciones li a.noslec {
+            background-color: #ffffff !important;
+            color: #137397;
+            border: 1px solid #137397; }
+          main .box .content article ul.extenciones li a.noslec:hover {
+            background-color: #459418 !important;
+            color: #ffffff;
+            border: 1px solid #459418; }
+        main .box .content article ul.otro {
+          margin: 0 auto; }
+        main .box .content article .otro p {
+          float: left;
+          padding-top: 2px;
+          display: inline-block; }
+        main .box .content article img.card {
+          display: block;
+          width: 1005;
+          max-width: 273px;
+          height: auto;
+          margin: 0 auto;
+          clear: both; }
+        main .box .content article #card {
+          display: none;
+          background-color: #daecf2;
+          margin: 10px -15px 0px;
+          padding: 15px;
+          overflow: hidden; }
+        main .box .content article h3 {
+          display: block;
+          color: #1d1c1c;
+          font-size: 14px;
+          font-weight: 400;
+          padding-top: 15px;
+          margin-bottom: 10px; }
 
-/* COLUMNS */
-/* MENU */
+/* FORM */
+form {
+  display: block;
+  padding: 15px 0; }
+  form .centinel {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+    background-color: #137397;
+    padding: 7px 15px;
+    color: #ffffff;
+    width: 80%;
+    margin: 0 auto; }
+    form .centinel .checkit {
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      border-radius: 20px;
+      border: 1px solid #ffffff; }
+    form .centinel .checkit:after {
+      left: 0;
+      content: "";
+      background: url("../img/ico-check.png") no-repeat center center;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      border-radius: 20px; }
+    form .centinel .checkit:checked:after {
+      background: url("../img/ico-check-white.png") no-repeat center center; }
+  form .checkit {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: initial;
+    outline: none !important;
+    cursor: pointer;
+    border: 1px solid #ddd; }
+  form .checkit:after {
+    position: absolute;
+    display: block;
+    line-height: 32px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    transition: all 0.3s ease-in 0s;
+    color: black;
+    border: 1px solid #888;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px; }
+  form .checkit:after {
+    left: 0;
+    content: ""; }
+  form .checkit:checked:after {
+    left: 0;
+    content: "";
+    background: url("../img/ico-check.png") no-repeat center center; }
+  form input[type=checkbox] + label {
+    color: #ccc;
+    content: "mostrar"; }
+  form input[type=checkbox]:checked + label {
+    color: #137397;
+    font-style: normal;
+    content: "Deshabilitar "; }
+  form input[type=checkbox] + label:before {
+    content: "Utilizar "; }
+  form input[type=checkbox]:checked + label:before {
+    content: "Deshabilitar "; }
+  form select[name="perfil"] {
+    width: 244px;
+    height: 30px;
+    border: 0 !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #ffffff url("../img/arrow.png") no-repeat 95% center;
+    text-indent: 0.01px;
+    text-overflow: "";
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px 5px 5px 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    font-family: "Fjalla One", sans-serif;
+    color: #137397;
+    font-weight: 400; }
+    form select[name="perfil"] option[value="Tarjeta Actual"] {
+      background: #ffffff;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      font-family: "Fjalla One", sans-serif;
+      color: #137397;
+      font-weight: 400; }
+  form label {
+    display: inline-block;
+    position: relative;
+    top: -8px;
+    margin: 0 5px;
+    font-size: 13px;
+    font-style: normal; }
+
+/* TABLE */
+table.longitudes {
+  margin: 30px auto;
+  text-align: left;
+  border-collapse: collapse; }
+  table.longitudes thead {
+    font-weight: 400; }
+  table.longitudes thead tr th {
+    border-bottom: 1px solid #dbdadb;
+    height: 30px; }
+  table.longitudes tbody tr td img {
+    margin: 4px; }
+  table.longitudes tbody tr:hover {
+    background-color: #ffffff; }
+
+/* MODAL */
+.modal {
+  color: #1d1c1c;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 14px; }
+  .modal table.longitudes {
+    text-align: center;
+    margin: 15px auto 25px auto;
+    font-size: 13px;
+    color: #333; }
+    .modal table.longitudes a {
+      display: block;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      padding: 3px 2px; }
+    .modal table.longitudes a:hover {
+      color: #137397;
+      background-color: #dbdadb; }
+    .modal table.longitudes td.picked {
+      background-color: #dbdadb; }
+      .modal table.longitudes td.picked a:hover {
+        background-color: #1d1c1c;
+        color: #ffffff; }
+  .modal form {
+    text-align: center; }
+
+.contador {
+  clear: left; }
+  .contador input[type=number] {
+    width: 50px;
+    text-align: center;
+    font-size: 14px;
+    color: #137397;
+    font-family: "Fjalla One", sans-serif;
+    margin: 0 4px;
+    text-align: center; }
+
 /* CTA */
-/* CTA */
+a.btn-ready,
+a.cancelar {
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  margin: 0 5px;
+  color: #ffffff;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+  float: right;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 13px; }
+
+a.btn-ready {
+  background-color: #137397; }
+  a.btn-ready:hover {
+    background-color: #459418; }
+
+a.cancelar {
+  background-color: #787878; }
+  a.cancelar:hover {
+    background-color: #bd4a4a; }
+
 /* RESPONSIVE */
+@media only screen and (max-width: 660px) {
+  nav {
+    width: 15% !important; }
+    nav ul li a span {
+      display: none !important; }
+  .content {
+    width: 85% !important; } }
