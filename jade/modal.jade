@@ -1,0 +1,60 @@
+div#ex5.modal.contador 
+  form
+    | Longitud de tarjeta
+    input.checkit(id="user_lic" type="number" min="10" max="19" step="1" value ="10")
+    | digitos
+  table.longitudes(width="80%", border="0", cellspacing="3", cellpadding="6")
+    thead
+        tr
+          th(valign="middle", scope="col") 01
+          th(scope="col" valign="middle") 02
+          th(scope="col" valign="middle") 03
+          th(scope="col" valign="middle") 04
+          th(scope="col" valign="middle") 05
+          th(scope="col" valign="middle") 06
+          th(scope="col" valign="middle") 07
+          th(scope="col" valign="middle") 08
+          th(scope="col" valign="middle") 09
+          th(scope="col" valign="middle") 10
+          th(scope="col" valign="middle") 11
+          th(scope="col" valign="middle") 12
+          th(scope="col" valign="middle") 13
+          th(scope="col" valign="middle") 14
+          th(scope="col" valign="middle") 15
+          th(scope="col" valign="middle") 16
+    tbody
+        tr
+          td
+            a(href="#") 0
+          td
+            a(href="#") 0
+          td
+            a(href="#") 0
+          td
+            a(href="#") 0
+          td
+            a(href="#") 0
+          td
+            a(href="#") 0
+          td
+            a(href="#") 0
+          td
+            a(href="#") 0
+          td.picked
+            a(href="#") X
+          td.picked
+            a(href="#") X
+          td.picked
+            a(href="#") X
+          td.picked
+            a(href="#") X
+          td
+            a(href="#") 0
+          td
+            a(href="#") 0
+          td
+            a(href="#") 0
+          td
+            a(href="#") 0
+  a.btn-ready(href="#" rel="modal:close") GUARDAR
+  a.cancelar(href="#" rel="modal:close") CANCELAR   

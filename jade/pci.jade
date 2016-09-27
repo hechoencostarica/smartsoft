@@ -1,0 +1,42 @@
+div.col.content
+  article
+    img.card(src="img/card-muckup.jpg")
+    form.showhide
+      input.checkit(type="checkbox", value="Mostrar", name="ossm", onclick="toggle_visibility('card');")= clic
+      label enmascaramientos sobre n&uacute;meros de tarjetas
+    div#card
+      form
+        div.centinel
+          input.checkit(type="radio", name="gender", value="male")
+          label Utilizar m&eacute;todos de Centinel
+          input.checkit(type="radio", name="gender", value="male")
+          label Utilizar m&eacute;todos cliente
+      h3 Defina la m&aacute;scara a ser aplicada de acuerdo a su longitud
+      div
+      // TABLE
+      table.longitudes(width="80%", border="0", cellspacing="3", cellpadding="6")
+          thead
+              tr
+                th(valign="middle", scope="col") Longitud
+                th(scope="col" valign="middle")  Muestra de M&aacute;scara
+                th(scope="col" valign="middle", width="30") &nbsp;
+          tbody
+              tr
+                td 15
+                td 0000 0000 0000 ***
+                td
+                  a(href="#")
+                    img(src="img/ico-edit.png")
+              tr
+                td 16
+                td 0000 **** **** 0000
+                td
+                    a(href="#")
+                      img(src="img/ico-edit.png")
+              tr
+                td 19
+                td 0000 0000 0000 **** ***
+                td
+                  a(href="#")
+                    img(src="img/ico-edit.png")
+      a.btn-ready(href="#ex5", title="Nuevo") Nuevo

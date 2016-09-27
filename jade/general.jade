@@ -1,0 +1,68 @@
+// general.jade
+
+div.col.content
+  article
+    span EXTENCIONES RESTRINGIDAS
+    div.contador
+
+      ul.extenciones.otro
+        p
+         | Tama&ntilde;o m&aacute;ximo permitido
+        li 
+          a.btn-ready.noslec(href="#") 7Z
+          img.card(src="img/medidor.jpg")
+    
+    span ARCHIVOS ADJUNTOS
+
+    div.contador
+    ul.extenciones
+      li 
+        a.btn-ready(href="#") PNG
+      li 
+        a.btn-ready(href="#") JPG
+      li 
+        a.btn-ready(href="#") BMP
+      li 
+        a.btn-ready(href="#") PSD
+      li 
+        a.btn-ready(href="#") RAR
+      li 
+        a.btn-ready.noslec(href="#") ZIP
+      li 
+        a.btn-ready.noslec(href="#") MOV
+      li 
+        a.btn-ready.noslec(href="#") DOC
+      li 
+        a.btn-ready.noslec(href="#") EXL
+      li 
+        a.btn-ready.noslec(href="#") 7Z
+        
+      
+     
+  article
+    span PERFIL
+    div.contador 
+      form
+        | Seleccione el tipo de c&aacute;lculo de perfil
+        br
+        select.checkit(name="perfil")
+          option(value="Tarjeta Actual", selected) Tarjeta Actual
+          option(value="Tarjeta 2") Tarjeta 2
+          option(value="Tarjeta 3") Tarjeta 3
+          option(value="Tarjeta 4") Tarjeta 4
+
+        
+  article
+    span BLOQUEOS EMISOR
+    div.contador 
+      form
+        | Intervalo de tiempo entre solicitudes a un mismo afectado
+        input.checkit(id="user_lic" type="number" min="1" max="24" step="1" value ="1")
+        | horas
+  article
+    span BLOQUEOS ADQUIRIENTE
+    div.contador 
+      form
+        | Intervalo de tiempo entre solicitudes a un mismo afectado
+        input.checkit(id="user_lic" type="number" min="1" max="24" step="1" value ="1")
+        | horas

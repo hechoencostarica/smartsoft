@@ -2,35 +2,66 @@
 doctype html
 html(lang='en')
   head
-    title= test
-    link(href='css/normalize.css')
-    link(href='css/style.css' rel="stylesheet")
-    link(href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet")
-    script
-      - var titulo = "Titulo Principal"
-      - var link1 = "Algo"
-      - var link2 = "Lorem"
-      - var link3 = "Ipsum"
-      - var link4 = "Txt"
-      - var link5 = "Texto"
-      - var link6 = "B"
-      - var clic = "Tarjeta"
-    script(type="text/javascript", src="js/progras.js")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
 
+    title= titulo
+    link(href='css/normalize.css')
+    link(href='css/style.css', rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Fjalla+One", rel="stylesheet")
+
+    script(type="text/javascript", src="js/progras.js")
+    
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js")
+    script(src="js/jquery.modal.js", type="text/javascript", charset="utf-8")
+    link(href="css/jquery.modal.css", rel="stylesheet", type="text/css", media="screen")
+    
+    //[if lt IE 7]>
+      <html class="ie ie6" lang="en"> <![endif]
+    //[if IE 7]>
+      <html class="ie ie7" lang="en"> <![endif]
+    //[if IE 8]>
+      <html class="ie ie8" lang="en"> <![endif]
+      
+    script
+      - var link1 = "GENERAL"
+      - var link2 = "ESTADOS INICIALES"
+      - var link3 = "ALERTAS"
+      - var link4 = "ENVIO DE ALERTAS"
+      - var link5 = "ANALISTA VIRTUAL"
+      - var link6 = "INFORMES CENTINEL"
+      - var link7 = "REPORTES"
+      - var link8 = "BASES DE DATOS"
+      - var link9 = "MOTOR"
+      - var link10 = "SEGURIDAD"
+      - var link11 = "EFECTIVIDAD REGLAS"
+      - var link12 = "CAMPOS AUXILIARES"
+      - var link13 = "NORMATIVA PCI"
+      - var link14 = "HISTORICOS"
+    
   body
     // start
     
     //- HEADER
     header
       div.wrap
-        h1= titulo
+          h1 
+            img(src="img/ico-ajust.png") 
+            | CONFIGURACI&Oacute;N DEL SISTEMA
+      span.mini-menu
+          a(href="#") 
+           img(src="img/ico-home.png")
+          a(href="#") 
+           img(src="img/ico-exit.png")
+          
     //- CONTAINER
+    
     main
       div.wrap.box.columns
         nav.col
+          div.false-col
           ul
             li
-              a.selected(href="#")
+              a.selected(href="index.html")
                 img(src="img/ico-1.png")
                 span= link1
             li
@@ -53,27 +84,79 @@ html(lang='en')
               a(href="#")
                 img(src="img/ico-6.png")
                 span= link6
-        //- div.col.content
-        //-   article
-        //-     p
-        //-       | Jade is a terse and simple
-        //-       | templating language with a
-        //-       | strong focus on performance
-        //-       | and
-        //-   article
-        //-     span Titulo
-        //-   article
-        //-     span Titulo
-        //-   article 
-        //-     span Titulo
-        div.col.content
-          article
-            img.card(src="img/card-muckup.jpg")
-            form.showhide
-              input.checkit(type="checkbox", value="Mostrar", name="ossm", onclick="toggle_visibility('card');")= clic
-              label enmascaramientos sobre números de tarjetas
-              div#card This is foo
+            li
+              a(href="#")
+                img(src="img/ico-7.png")
+                span= link7
+            li
+              a(href="#")
+                img(src="img/ico-8.png")
+                span= link8
+            li
+              a(href="#")
+                img(src="img/ico-9.png")
+                span= link9
+            li
+              a(href="#")
+                img(src="img/ico-10.png")
+                span= link10
+            li
+              a(href="#")
+                img(src="img/ico-11.png")
+                span= link11
+            li
+              a(href="#")
+                img(src="img/ico-12.png")
+                span= link12
+            li
+              a(href="pci.html")
+                img(src="img/ico-13.png")
+                span= link13
+            li
+              a(href="#")
+                img(src="img/ico-14.png")
+                span= link14
 
+        include general
+        
+        //- include pci
+        
     footer
-      div
+    
+    //- MODAL
+    include modal  
+       
+    script(type="text/javascript" charset="utf-8").
+      $(function() {
+        function log_modal_event(event, modal) {
+          if(typeof console != 'undefined' && console.log) console.log("[event] " + event.type);
+        };
+
+        $(document).on($.modal.BEFORE_BLOCK, log_modal_event);
+        $(document).on($.modal.BLOCK, log_modal_event);
+        $(document).on($.modal.BEFORE_OPEN, log_modal_event);
+        $(document).on($.modal.OPEN, log_modal_event);
+        $(document).on($.modal.BEFORE_CLOSE, log_modal_event);
+        $(document).on($.modal.CLOSE, log_modal_event);
+        $(document).on($.modal.AFTER_CLOSE, log_modal_event);
+        $(document).on($.modal.AJAX_SEND, log_modal_event);
+        $(document).on($.modal.AJAX_SUCCESS, log_modal_event);
+        $(document).on($.modal.AJAX_COMPLETE, log_modal_event);
+
+        $('#more').click(function() {
+          $(this).parent().after($(this).parent().next().clone());
+          return false;
+        });
+
+        $('a[href="#ex5"]').click(function(event) {
+          event.preventDefault();
+          $(this).modal({
+            escapeClose: false,
+            clickClose: false,
+            showClose: false
+          });
+        });
+
+      });
+    
     // end
